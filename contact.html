@@ -30,41 +30,41 @@
   <main>
     <section class="page-hero page-hero--contact">
       <div class="container">
-        <p class="page-hero-label">Contact</p>
-        <h1 class="page-hero-title">Contact Kespra Advisory</h1>
-        <p class="page-hero-subtitle">Start a conversation with our advisory team.</p>
+        <p class="page-hero-label" data-content-id="contact.hero.label">Contact</p>
+        <h1 class="page-hero-title" data-content-id="contact.hero.title">Contact Kespra Advisory</h1>
+        <p class="page-hero-subtitle" data-content-id="contact.hero.subtitle">Start a conversation with our advisory team.</p>
       </div>
     </section>
 
     <section class="contact-page" id="contact-form">
       <div class="container contact-layout">
         <div class="contact-card">
-          <p class="page-overline">Get in Touch</p>
-          <h2 class="section-title">Prefer a phone call or a direct email?</h2>
-          <p>Reach out through any channel below and we’ll respond within one business day.</p>
-          <p class="contact-company">Kespra Advisory Limited</p>
+          <p class="page-overline" data-content-id="contact.contactCard.overline">Get in Touch</p>
+          <h2 class="section-title" data-content-id="contact.contactCard.title">Prefer a phone call or a direct email?</h2>
+          <p data-content-id="contact.contactCard.intro">Reach out through any channel below and we’ll respond within one business day.</p>
+          <p class="contact-company" data-content-id="contact.contactCard.company">Kespra Advisory Limited</p>
           <ul class="contact-details-list">
             <li>
               <span class="contact-label">Phone</span>
-              <a href="tel:3104755854">(310) 475-5854</a>
+              <a href="tel:3104755854" data-content-id="contact.contactCard.phone" data-content-href="contact.contactCard.phoneHref">(310) 475-5854</a>
             </li>
             <li>
               <span class="contact-label">Email</span>
-              <a href="mailto:kespraadvisory@gmail.com">kespraadvisory@gmail.com</a>
+              <a href="mailto:kespraadvisory@gmail.com" data-content-id="contact.contactCard.email" data-content-href="contact.contactCard.emailHref">kespraadvisory@gmail.com</a>
             </li>
             <li>
               <span class="contact-label">Office</span>
-              <p>11835 W Olympic Blvd # 1155E<br />Los Angeles, CA 90064</p>
+              <p data-content-id="contact.contactCard.address">11835 W Olympic Blvd # 1155E<br />Los Angeles, CA 90064</p>
             </li>
           </ul>
           <div class="contact-hours">
             <span class="contact-label">Hours</span>
-            <p>Monday – Friday, 8:30am – 6:00pm PT</p>
+            <p data-content-id="contact.contactCard.hours">Monday – Friday, 8:30am – 6:00pm PT</p>
           </div>
         </div>
 
         <div class="contact-form-wrap">
-          <p class="contact-form-intro">Submit your details below and we’ll get back to you within one business day.</p>
+          <p class="contact-form-intro" data-content-id="contact.formIntro">Submit your details below and we’ll get back to you within one business day.</p>
           <form class="contact-form" id="contactForm">
             <input type="text" name="name" placeholder="Full Name" required />
             <div class="form-row">
@@ -86,9 +86,9 @@
 
     <section class="page-cta" id="cta-email">
       <div class="container">
-        <p class="page-overline">Get Started</p>
-        <h2 class="section-title">Submit your inquiry or schedule a consultation with our team.</h2>
-        <a href="mailto:nihar08ranjansamal@gmail.com?subject=Kespra%20Advisory%20Inquiry" class="btn btn-outline btn-cta-email">Email Us →</a>
+        <p class="page-overline" data-content-id="contact.cta.overline">Get Started</p>
+        <h2 class="section-title" data-content-id="contact.cta.title">Submit your inquiry or schedule a consultation with our team.</h2>
+        <a href="mailto:nihar08ranjansamal@gmail.com?subject=Kespra%20Advisory%20Inquiry" class="btn btn-outline btn-cta-email" data-content-id="contact.cta.buttonText" data-content-href="contact.cta.buttonHref">Email Us →</a>
       </div>
     </section>
   </main>
@@ -97,22 +97,21 @@
     <div class="footer-main">
       <div class="container footer-grid">
         <div class="footer-brand">
-          <h3>Kespra Advisory</h3>
-          <a href="contact.html#contact-form">Get in contact</a>
-          <a href="tel:3104755854">(310) 475-5854</a>
-          <a href="mailto:kespraadvisory@gmail.com">kespraadvisory@gmail.com</a>
-          <p>11835 W Olympic Blvd # 1155E, Los Angeles, CA 90064</p>
+          <h3 data-content-id="shared.footer.companyName">Kespra Advisory</h3>
+          <a href="contact.html#contact-form" data-content-id="shared.footer.contactLink" data-content-href="shared.footer.contactHref">Get in contact</a>
+          <a href="tel:3104755854" data-content-id="shared.footer.phone" data-content-href="shared.footer.phoneHref">(310) 475-5854</a>
+          <a href="mailto:kespraadvisory@gmail.com" data-content-id="shared.footer.email" data-content-href="shared.footer.emailHref">kespraadvisory@gmail.com</a>
+          <p data-content-id="shared.footer.address">11835 W Olympic Blvd # 1155E, Los Angeles, CA 90064</p>
         </div>
         <div class="footer-social">
-          <a href="#">LinkedIn</a>
-          <a href="#">Facebook</a>
+          <!-- Social links will be dynamically loaded here -->
         </div>
       </div>
     </div>
     <div class="footer-legal">
       <div class="container">
-        <p class="footer-credit">Kespra Advisory Limited — Digital Transformation &amp; ERP Advisory</p>
-        <p class="footer-powered-by">Powered by <a href="https://zenuino.in/" target="_blank" rel="noopener noreferrer">Zenuino Pvt Ltd</a></p>
+        <p class="footer-credit" data-content-id="shared.footer.credit">Kespra Advisory Limited — Digital Transformation &amp; ERP Advisory</p>
+        <p class="footer-powered-by"><span data-content-id="shared.footer.poweredByText">Powered by</span> <a href="https://zenuino.in/" target="_blank" rel="noopener noreferrer" data-content-id="shared.footer.poweredByLink" data-content-href="shared.footer.poweredByHref">Zenuino Pvt Ltd</a></p>
       </div>
     </div>
     <!-- <div class="footer-legal">
@@ -135,6 +134,7 @@
     </div> -->
   </footer>
 
+  <script src="content-loader.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

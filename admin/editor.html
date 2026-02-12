@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Content Editor | Kespra Advisory</title>
+  <link rel="stylesheet" href="admin.css" />
+</head>
+<body class="admin-editor">
+  <header class="admin-header">
+    <h1>Kespra Advisory</h1>
+    <div class="admin-actions">
+      <a href="/" class="btn btn-outline" target="_blank">View Site</a>
+      <button type="button" id="saveBtn" class="btn btn-gold">Save Changes</button>
+      <button type="button" id="logoutBtn" class="btn btn-outline">Logout</button>
+    </div>
+  </header>
+
+  <div class="admin-layout">
+    <aside class="admin-sidebar">
+      <nav>
+        <a href="#home" class="nav-link active">Home</a>
+        <a href="#services" class="nav-link">Services</a>
+        <a href="#contact" class="nav-link">Contact</a>
+        <a href="#footer" class="nav-link">Footer</a>
+        <a href="#settings" class="nav-link">Settings</a>
+      </nav>
+    </aside>
+
+    <main class="admin-main has-preview">
+      <div id="saveStatus" class="status-msg" aria-live="polite"></div>
+
+      <!-- HOME PAGE -->
+      <section id="home" class="editor-section active">
+        <h2>Home Page</h2>
+        <p class="section-desc">Edit the main content displayed on your homepage.</p>
+
+        <div class="form-group collapsed">
+          <h3>Hero Section</h3>
+          <div class="form-group-content">
+            <div class="field">
+              <label>Headline</label>
+              <textarea data-field="index.hero.title" rows="2"></textarea>
+            </div>
+            <div class="field">
+              <label>Background Image URL</label>
+              <input type="url" data-field="index.hero.backgroundImage" />
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group collapsed">
+          <h3>Introduction</h3>
+          <div class="form-group-content">
+            <div class="field">
+              <label>Main Heading</label>
+              <textarea data-field="index.intro.heading" rows="2"></textarea>
+            </div>
+            <div class="field">
+              <label>Lead Text</label>
+              <textarea data-field="index.intro.lead" rows="2"></textarea>
+            </div>
+            <div class="field">
+              <label>Main Paragraph</label>
+              <textarea data-field="index.intro.paragraph" rows="2"></textarea>
+            </div>
+            <div class="field">
+              <label>Outcome Text</label>
+              <textarea data-field="index.intro.outcome" rows="2"></textarea>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group collapsed">
+          <h3>What We Do</h3>
+          <div class="form-group-content">
+            <div id="whatWeDoList" class="dynamic-list" data-array="index.whatWeDo"></div>
+            <button type="button" class="btn btn-outline add-item-btn" data-target="whatWeDoList" data-template="whatWeDo">+ Add Service</button>
+          </div>
+        </div>
+
+        <div class="form-group collapsed">
+          <h3>Industries</h3>
+          <div class="form-group-content">
+            <div id="industriesList" class="dynamic-list" data-array="index.industries.items"></div>
+            <button type="button" class="btn btn-outline add-item-btn" data-target="industriesList" data-template="industry">+ Add Industry</button>
+          </div>
+        </div>
+
+        <div class="form-group collapsed">
+          <h3>Technology Section</h3>
+          <div class="form-group-content">
+            <div class="field">
+              <label>Title</label>
+              <input type="text" data-field="index.tech.title" />
+            </div>
+            <div class="field">
+              <label>Description</label>
+              <textarea data-field="index.tech.text" rows="3"></textarea>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group collapsed">
+          <h3>Team</h3>
+          <div class="form-group-content">
+            <div id="teamList" class="dynamic-list" data-array="index.team.members"></div>
+            <button type="button" class="btn btn-outline add-item-btn" data-target="teamList" data-template="team">+ Add Team Member</button>
+          </div>
+        </div>
+
+        <div class="form-group collapsed">
+          <h3>Call to Action</h3>
+          <div class="form-group-content">
+            <div class="field">
+              <label>Heading</label>
+              <input type="text" data-field="index.joinCta.title" />
+            </div>
+            <div class="field">
+              <label>Button Text</label>
+              <input type="text" data-field="index.joinCta.buttonText" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SERVICES PAGE -->
+      <section id="services" class="editor-section">
+        <h2>Services Page</h2>
+        <p class="section-desc">Manage your advisory services content.</p>
+
+        <div class="form-group collapsed">
+          <h3>Hero Section</h3>
+          <div class="form-group-content">
+            <div class="field">
+              <label>Title</label>
+              <textarea data-field="services.hero.title" rows="2"></textarea>
+            </div>
+            <div class="field">
+              <label>Subtitle</label>
+              <textarea data-field="services.hero.subtitle" rows="2"></textarea>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group collapsed">
+          <h3>Advisory Approach</h3>
+          <div class="form-group-content">
+            <div class="field">
+              <label>Title</label>
+              <input type="text" data-field="services.advisoryApproach.title" />
+            </div>
+            <div class="field">
+              <label>Description</label>
+              <textarea data-field="services.advisoryApproach.paragraphs.0" rows="3"></textarea>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group collapsed">
+          <h3>Service Areas</h3>
+          <div class="form-group-content">
+            <div id="serviceAreasList" class="dynamic-list" data-array="services.serviceAreas.items"></div>
+            <button type="button" class="btn btn-outline add-item-btn" data-target="serviceAreasList" data-template="serviceArea">+ Add Service Area</button>
+          </div>
+        </div>
+
+        <div class="form-group collapsed">
+          <h3>Technology Partnership</h3>
+          <div class="form-group-content">
+            <div class="field">
+              <label>Title</label>
+              <input type="text" data-field="services.techPartnerships.title" />
+            </div>
+            <div class="field">
+              <label>Description</label>
+              <textarea data-field="services.techPartnerships.paragraphs.0" rows="3"></textarea>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT PAGE -->
+      <section id="contact" class="editor-section">
+        <h2>Contact Page</h2>
+        <p class="section-desc">Update your contact information.</p>
+
+        <div class="form-group collapsed">
+          <h3>Page Header</h3>
+          <div class="form-group-content">
+            <div class="field">
+              <label>Title</label>
+              <input type="text" data-field="contact.hero.title" />
+            </div>
+            <div class="field">
+              <label>Subtitle</label>
+              <input type="text" data-field="contact.hero.subtitle" />
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group collapsed">
+          <h3>Contact Details</h3>
+          <div class="form-group-content">
+            <div class="field">
+              <label>Company Name</label>
+              <input type="text" data-field="contact.contactCard.company" />
+            </div>
+            <div class="field-row">
+              <div class="field"><label>Phone</label><input type="text" data-field="contact.contactCard.phone" /></div>
+              <div class="field"><label>Email</label><input type="email" data-field="contact.contactCard.email" /></div>
+            </div>
+            <div class="field">
+              <label>Address</label>
+              <textarea data-field="contact.contactCard.address" rows="2"></textarea>
+            </div>
+            <div class="field">
+              <label>Business Hours</label>
+              <input type="text" data-field="contact.contactCard.hours" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FOOTER -->
+      <section id="footer" class="editor-section">
+        <h2>Footer</h2>
+        <p class="section-desc">Shared footer content across all pages.</p>
+
+        <div class="form-group collapsed">
+          <h3>Company Info</h3>
+          <div class="form-group-content">
+            <div class="field">
+              <label>Company Name</label>
+              <input type="text" data-field="shared.footer.companyName" />
+            </div>
+            <div class="field-row">
+              <div class="field"><label>Phone</label><input type="text" data-field="shared.footer.phone" /></div>
+              <div class="field"><label>Email</label><input type="email" data-field="shared.footer.email" /></div>
+            </div>
+            <div class="field">
+              <label>Address</label>
+              <input type="text" data-field="shared.footer.address" />
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group collapsed">
+          <h3>Social Links</h3>
+          <div class="form-group-content">
+            <p class="help-text">Add social media links that will appear in the footer. Each link has a display label and a URL.</p>
+            <div id="socialLinksList" class="dynamic-list" data-array="shared.footer.socialLinks"></div>
+            <button type="button" class="btn btn-outline add-item-btn" data-target="socialLinksList" data-template="socialLink">+ Add Social Link</button>
+          </div>
+        </div>
+
+        <div class="form-group collapsed">
+          <h3>Credits</h3>
+          <div class="form-group-content">
+            <div class="field">
+              <label>Footer Credit Line</label>
+              <input type="text" data-field="shared.footer.credit" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SETTINGS -->
+      <section id="settings" class="editor-section settings-section">
+        <h2>Settings</h2>
+        <p class="section-desc">Account settings and media uploads.</p>
+
+        <div class="form-group collapsed">
+          <h3>Change Password</h3>
+          <div class="form-group-content">
+            <div class="field">
+              <label>New Password</label>
+              <div class="password-field-wrapper">
+                <input type="password" id="newPassword" autocomplete="new-password" />
+                <button type="button" class="toggle-password" data-target="newPassword" aria-label="Toggle password visibility">
+                  <svg class="eye-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path class="eye-open" d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                    <circle class="eye-open" cx="12" cy="12" r="3"></circle>
+                    <path class="eye-closed" d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24" style="display:none;"></path>
+                    <line class="eye-closed" x1="1" y1="1" x2="23" y2="23" style="display:none;"></line>
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div class="field">
+              <label>Confirm New Password</label>
+              <div class="password-field-wrapper">
+                <input type="password" id="confirmPassword" autocomplete="new-password" />
+                <button type="button" class="toggle-password" data-target="confirmPassword" aria-label="Toggle password visibility">
+                  <svg class="eye-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path class="eye-open" d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                    <circle class="eye-open" cx="12" cy="12" r="3"></circle>
+                    <path class="eye-closed" d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24" style="display:none;"></path>
+                    <line class="eye-closed" x1="1" y1="1" x2="23" y2="23" style="display:none;"></line>
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div id="passwordError" class="error-msg"></div>
+            <button type="button" id="changePasswordBtn" class="btn btn-primary" style="margin-top: 16px;">Update Password</button>
+          </div>
+        </div>
+
+        <div class="form-group collapsed">
+          <h3>Upload Image</h3>
+          <div class="form-group-content">
+            <p class="help-text">Upload an image to get a URL you can use in image fields.</p>
+            <input type="file" id="imageUpload" accept="image/*" />
+            <div id="uploadResult" class="upload-result"></div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Website Preview Panel -->
+    <aside class="preview-panel">
+      <div class="preview-header">
+        <h3>Live Preview</h3>
+        <div class="preview-controls">
+          <select id="previewPage" class="preview-select">
+            <option value="/">Home</option>
+            <option value="/services.html">Services</option>
+            <option value="/contact.html">Contact</option>
+          </select>
+          <button type="button" id="refreshPreview" class="btn btn-outline btn-sm" title="Refresh Preview">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M23 4v6h-6M1 20v-6h6"></path>
+              <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path>
+            </svg>
+          </button>
+          <button type="button" id="togglePreview" class="btn btn-outline btn-sm" title="Toggle Preview">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+              <line x1="9" y1="3" x2="9" y2="21"></line>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div class="preview-content">
+        <div class="laptop-frame">
+          <div class="laptop-screen">
+            <div class="laptop-notch"></div>
+            <div class="laptop-screen-inner">
+              <iframe id="previewFrame" src="/" title="Website Preview"></iframe>
+            </div>
+          </div>
+          <div class="laptop-base">
+            <div class="laptop-keyboard"></div>
+          </div>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <script src="editor.js"></script>
+</body>
+</html>
